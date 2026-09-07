@@ -1,3 +1,5 @@
+package medium_problems;
+
 public class ValidatePalindrome {
   public static void main(String[] args) {
     String s = "A man, a plan, a canal: Panama";

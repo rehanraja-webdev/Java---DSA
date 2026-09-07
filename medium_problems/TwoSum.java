@@ -1,3 +1,5 @@
+package medium_problems;
+
 import java.util.HashMap;
 
 public class TwoSum {
