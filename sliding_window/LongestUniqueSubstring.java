@@ -10,20 +10,26 @@ public class LongestUniqueSubstring {
   }
 
   static int longestUniqueSubstring(String s) {
-    int maxSubstring = 0;
-    HashSet<Character> set = new HashSet<>();
-    
-    int l = 0;
-    for (int r = 0; r < s.length(); r++) {
-      Character ch = s.charAt(r);
 
-      if (set.contains(ch)) {
+    HashSet<Character> set = new HashSet<>();
+
+    int maxSubstring = 0;
+    int l = 0;
+
+    for (int r = 0; r < s.length(); r++) {
+
+      char ch = s.charAt(r);
+
+      while (set.contains(ch)) {
+        set.remove(s.charAt(l));
         l++;
-      } else {
-        set.add(ch);
-        maxSubstring = Math.max(maxSubstring, r - l + 1);
       }
+
+      set.add(ch);
+
+      maxSubstring = Math.max(maxSubstring, r - l + 1);
     }
+
     return maxSubstring;
   }
 }

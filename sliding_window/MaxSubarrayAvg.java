@@ -9,7 +9,7 @@ public class MaxSubarrayAvg {
 
   static double maxSubarrayAvg(int[] nums, int winSize) {
     int sum = 0;
-    double maxAvg = 0;
+    double maxAvg = Double.NEGATIVE_INFINITY;
     for (int right = 0; right < nums.length; right++) {
       sum += nums[right];
       if (right >= winSize - 1) {
