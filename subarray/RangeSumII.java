@@ -1,5 +1,7 @@
 package subarray;
 
+//Calculate the prefix sum and find sum between a range of indexes. 
+// Ex-> rangeSum(arr, left, rigth);
 public class RangeSumII {
   static int rangeSum(int[] prefix, int left, int right) {
     return prefix[right + 1] - prefix[left];

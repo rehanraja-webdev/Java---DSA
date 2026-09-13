@@ -1,5 +1,6 @@
 package subarray;
 
+//Find the sum between given indexes of array
 public class RangeSum {
   static int rangeSum(int[] nums, int left, int right) {
     int[] prefix = new int[nums.length + 1];
