@@ -5,10 +5,8 @@ public class RangeSum {
   static int rangeSum(int[] nums, int left, int right) {
     int[] prefix = new int[nums.length + 1];
     prefix[0] = 0;
-    int sum = 0;
     for (int i = 0; i < nums.length; i++) {
-      sum += nums[i];
-      prefix[i + 1] = sum;
+      prefix[i + 1] = prefix[i] + nums[i];
     }
 
     return prefix[right + 1] - prefix[left];
@@ -16,6 +14,6 @@ public class RangeSum {
 
   public static void main(String[] args) {
     int[] nums = { 1, 2, 3, 4, 5 };
-    System.out.println(rangeSum(nums, 0, 0));
+    System.out.println(rangeSum(nums, 1, 3));
   }
 }
