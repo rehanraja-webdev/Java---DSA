@@ -1,4 +1,4 @@
-package subarray;
+package subarray.easy;
 
 public class SumOfSubarray {
   public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package subarray;
+package subarray.easy;
 
 import java.util.ArrayList;
 import java.util.List;
