@@ -1,4 +1,4 @@
-package subarray;
+package subarray.medium;
 
 import java.util.HashMap;
 import java.util.Map;

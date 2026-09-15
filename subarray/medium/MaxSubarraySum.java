@@ -1,4 +1,4 @@
-package subarray;
+package subarray.medium;
 
 public class MaxSubarraySum {
   public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package subarray;
+package subarray.medium;
 
 //Calculate the prefix sum and find sum between a range of indexes. 
 // Ex-> rangeSum(arr, left, rigth);

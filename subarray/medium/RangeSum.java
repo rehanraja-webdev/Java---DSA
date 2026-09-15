@@ -1,4 +1,4 @@
-package subarray;
+package subarray.medium;
 
 //Find the sum between given indexes of array
 public class RangeSum {

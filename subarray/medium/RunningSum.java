@@ -1,4 +1,4 @@
-package subarray;
+package subarray.medium;
 
 //Calculate the sum till a specific index
 public class RunningSum {

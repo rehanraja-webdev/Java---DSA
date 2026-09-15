@@ -1,4 +1,4 @@
-package subarray;
+package subarray.medium;
 
 //sum of elements on LEFT = sum of elements on RIGHT
 public class FindPivotIndex {
