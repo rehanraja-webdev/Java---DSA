@@ -35,7 +35,7 @@ public class NextPermutation {
       return;
     }
 
-    // Find the minimum element which is greater than arr[idx]
+    // Find the minimum element which is greater than arr[idx] and swap
     for (int i = n - 1; i > idx; i--) {
       if (arr[i] > arr[idx]) {
         int t = arr[i];
