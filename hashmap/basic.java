@@ -9,8 +9,7 @@ public class basic {
     map.put("favCol", "Black");
 
     map1.put(1, 5);
-
-
     System.out.println(map1.size());
   }
 }
+-+

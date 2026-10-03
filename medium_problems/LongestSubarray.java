@@ -1,5 +1,6 @@
 package medium_problems;
 
+//Prob: find the longest subarray with sum equals k among positive integer
 public class LongestSubarray {
   public static void main(String[] args) {
     int[] arr = { 2, 1, 3, 1, 1, 1, 1, 5, 6 };
