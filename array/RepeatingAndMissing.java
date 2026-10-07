@@ -4,15 +4,14 @@ package array;
 public class RepeatingAndMissing {
   public static void main(String[] args) {
     int[] nums = { 3, 4, 5, 2, 1, 4 };
-    int[] res = repeatingAndMissing(nums);
+    int[] res = repeatingAndMissingNums(nums);
 
     for (int num : res) {
       System.out.print(num + " ");
     }
-
   }
 
-  //Brute force approach
+  // Brute force approach
   static int[] repeatingAndMissing(int[] nums) {
     int repeating = -1;
     int missing = -1;
@@ -30,6 +29,56 @@ public class RepeatingAndMissing {
         repeating = i;
       }
     }
-    return new int[] { repeating, missing };
+    return new int[] { missing, repeating };
+  }
+
+  // Better solution using hash array| Hashmap
+  static int[] repeatingAndMissingNums(int[] nums) {
+    int[] hash = new int[nums.length + 1];
+
+    for (int num : nums) {
+      hash[num]++;
+    }
+
+    int mis = -1;
+    int rep = -1;
+    for (int i = 1; i < hash.length; i++) {
+      if (hash[i] == 0) {
+        mis = i;
+      } else if (hash[i] == 2) {
+        rep = i;
+      }
+    }
+
+    return new int[] { mis, rep };
+  }
+
+  //Optimal solution
+  static int[] repeatingAndMissingOptimal(int[] nums) {
+    int n = nums.length;
+    long Sn = n * (n + 1) / 2;
+    long S2n = n * (n + 1) * (2 * n + 1) / 6;
+
+    long Sarr = 0;
+    long S2arr = 0;
+    for (int num : nums) {
+      Sarr += (long) num;
+      S2arr += (long) num * num;
+    }
+
+    // x-y;
+    long eq1 = Sarr - Sn;
+
+    // x^2-y^2
+    long eq2 = S2arr - S2n;
+
+    // (x^2 -y^2)/(x-y) = (x-y)(x+y)/(x-y) == (x+y)
+    eq2 = eq2 / eq1;
+
+    // x is repeating
+    int repeating = (int) (eq1 + eq2) / 2;
+
+    int missing = (int) eq2 - repeating;
+    return new int[] { missing, repeating };
   }
 }
