@@ -7,7 +7,7 @@ public class TwoSum {
     int[] nums = { 1, 2, 3, 4, 5 };
     int target = 8;
 
-    int[] res = twosum(nums, target);
+    int[] res = twoSum(nums, target);
     for (int i : res) {
       System.out.print(i + " ");
     }
@@ -25,18 +25,21 @@ public class TwoSum {
 
       map.put(nums[i], i);
     }
-    
+
     return new int[] { -1, -1 };
 
-    // Brute force
-    // for (int i = 0; i < nums.length; i++) {
-    // for (int j = 1; j < nums.length; j++) {
-    // int sum = nums[i] + nums[j];
-    // if (sum == target) {
-    // return new int[] { i, j };
-    // }
-    // }
-    // }
-    // return new int[] { -1, -1 };
+  }
+
+  // Brute force
+  static int[] twoSum(int[] nums, int target) {
+    for (int i = 0; i < nums.length - 1; i++) {
+      for (int j = 1; j < nums.length; j++) {
+        int sum = nums[i] + nums[j];
+        if (sum == target) {
+          return new int[] { i, j };
+        }
+      }
+    }
+    return new int[] { -1, -1 };
   }
 }
